@@ -273,7 +273,7 @@ export const socialMedia = [
   {
     id: 1,
     img: "/link.svg",
-    link: "https://www.linkedin.com/in/aadeshvir-singh-055427212/",
+    link: "https://www.linkedin.com/in/aadesh001/",
   },
   {
     id: 2,
