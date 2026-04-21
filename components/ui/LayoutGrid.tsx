@@ -27,24 +27,18 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    // change md:grid-cols-3 to md:grid-cols-4, gap-4 to gap-10
     <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto gap-10 ">
       {cards.map((card, i) => (
         <Button
           key={i}
           borderRadius="1.75rem"
-          //   default is 2000
           duration={10000}
-          //   add className={cn(card.className, "")}
-          className={cn(
-            card.className
-            // "bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-          )}
+          className={cn(card.className)}
         >
           <div
             className={cn(
               card.className,
-              "relative border-3 border-yellow-500"
+              "relative border-3 border-yellow-500",
             )}
           >
             <motion.div
@@ -55,8 +49,8 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
                 selected?.id === card.id
                   ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                   : lastSelected?.id === card.id
-                  ? "z-40 bg-white rounded-xl h-full w-full"
-                  : "bg-white rounded-xl h-full w-full"
+                    ? "z-40 bg-white rounded-xl h-full w-full"
+                    : "bg-white rounded-xl h-full w-full",
               )}
               layout
             >
@@ -70,7 +64,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
         onClick={handleOutsideClick}
         className={cn(
           "absolute h-full w-full left-0 top-0 bg-black opacity-0 z-10",
-          selected?.id ? "pointer-events-auto" : "pointer-events-none"
+          selected?.id ? "pointer-events-auto" : "pointer-events-none",
         )}
         animate={{ opacity: selected?.id ? 0.3 : 0 }}
       />
@@ -89,7 +83,7 @@ const BlurImage = ({ card }: { card: Card }) => {
       onLoad={() => setLoaded(true)}
       className={cn(
         "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
-        loaded ? "blur-none" : "blur-md"
+        loaded ? "blur-none" : "blur-md",
       )}
       alt="thumbnail"
     />

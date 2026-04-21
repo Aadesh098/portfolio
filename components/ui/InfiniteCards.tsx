@@ -54,12 +54,12 @@ export const InfiniteMovingCards = ({
       if (direction === "left") {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "forwards"
+          "forwards",
         );
       } else {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "reverse"
+          "reverse",
         );
       }
     }
@@ -79,18 +79,16 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        // max-w-7xl to w-screen
         "scroller relative z-20 w-screen overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className
+        className,
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          // change gap-16
           " flex min-w-full shrink-0 gap-16 py-4 w-max flex-nowrap",
           start && "animate-scroll ",
-          pauseOnHover && "hover:[animation-play-state:paused]"
+          pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         {items.map((item, idx) => (
@@ -109,41 +107,44 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5"
               ></div>
-         <div className="relative z-20 text-xl leading-[1.6] text-white">
-  {item.name}
-</div>
-<div className="relative z-20 mt-6 flex flex-row items-center">
-  <div className="flex flex-col gap-1">
-    <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">  
-    • {item.subject1} / 10
-    </div>
-    <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
-    •  {item.subject2} / 10
-    </div>
-    <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
-    • {item.subject3} / 10
-    </div>
-    <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
-    • {item.subject4} / 10
-    </div>
-    <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
-    • {item.subject5} / 10
-    </div>
-    <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
-     • {item.subject6} / 10
-    </div>
-    <div className="flex items-center gap-2">
-      <div className="text-sm leading-[1.6] text-white-200 font-normal">
-        SGPA : {item.sg} ,   
-      </div>
-      <div className="text-sm leading-[1.6] text-white-200 font-normal">
-        CGPA : {item.cg}
-      </div>
-      <img src="/gold.png" alt="icon" className="w-10 h-10 rounded-full object-cover"/>
-    </div>
-  </div>
-</div>
-
+              <div className="relative z-20 text-xl leading-[1.6] text-white">
+                {item.name}
+              </div>
+              <div className="relative z-20 mt-6 flex flex-row items-center">
+                <div className="flex flex-col gap-1">
+                  <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
+                    • {item.subject1} / 10
+                  </div>
+                  <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
+                    • {item.subject2} / 10
+                  </div>
+                  <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
+                    • {item.subject3} / 10
+                  </div>
+                  <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
+                    • {item.subject4} / 10
+                  </div>
+                  <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
+                    • {item.subject5} / 10
+                  </div>
+                  <div className="text-sm md:text-lg leading-[1.6] text-white font-normal">
+                    • {item.subject6} / 10
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="text-sm leading-[1.6] text-white-200 font-normal">
+                      SGPA : {item.sg} ,
+                    </div>
+                    <div className="text-sm leading-[1.6] text-white-200 font-normal">
+                      CGPA : {item.cg}
+                    </div>
+                    <img
+                      src="/gold.png"
+                      alt="icon"
+                      className="w-10 h-10 rounded-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
             </blockquote>
           </li>
         ))}

@@ -5,11 +5,12 @@ import { navItems } from "@/data";
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
-import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
+import CourseWork from "@/components/CourseWork";
+import Achievements from "@/components/Achievements";
+import Experience from "@/components/StudentCells";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
+import StudentCells from "@/components/StudentCells";
 
 const Home = () => {
   return (
@@ -19,9 +20,9 @@ const Home = () => {
         <Hero />
         <Grid />
         <RecentProjects />
-        <Clients />
-        <Experience />
-        <Approach />
+        <CourseWork />
+        <StudentCells />
+        <Achievements />
         <Footer />
       </div>
     </main>
